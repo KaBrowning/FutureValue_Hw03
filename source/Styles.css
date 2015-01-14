@@ -22,6 +22,12 @@ label {
     width: 10em;
 }
 
+.validator {
+    font-size: 95%;
+    color: red;
+    margin-left: 1em;
+}
+
 .button {
     margin-top: 1em;
     width: 10em;

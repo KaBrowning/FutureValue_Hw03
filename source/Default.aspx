@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <img id="logo" alt="Murach logo" src="Images/MurachLogo.jpg"/>
+        <img id="logo" alt="Murach Logo" src="Images/MurachLogo.jpg"/>
     </header>
     <section>
         <form id="form1" runat="server">
@@ -18,9 +18,11 @@
             <br/>
             <label>Annual interest rate:</label>
             <asp:TextBox ID="txtInterestRate" runat="server" CssClass="entry">6.0</asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="validator" ErrorMessage="Interest rate is required." ControlToValidate="txtInterestRate" Display="Dynamic"></asp:RequiredFieldValidator>
             <br/>
             <label>Number of years:</label>
             <asp:TextBox ID="txtYears" runat="server" CssClass="entry">10</asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" CssClass="validator" ControlToValidate="txtYears" Display="Dynamic" ErrorMessage="Number of years is required."></asp:RequiredFieldValidator>
             <br/>
             <label>Future value:</label>
             <asp:Label ID="lblFutureValue" runat="server" Text=""></asp:Label>
