@@ -8,8 +8,10 @@
     border: 2px solid #0000FF;
 }
 h1 {
-    padding: 10px;
-    margin: 0 auto;
+    font-size: 140%;
+    color: #0000FF;
+    padding: 0;
+    margin-bottom: .5em;
 }
 label {
     float: left;
