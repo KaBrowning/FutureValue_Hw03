@@ -9,7 +9,7 @@
 }
 h1 {
     padding: 10px;
-    margin: 0px auto 0px auto;
+    margin: 0 auto;
 }
 label {
     float: left;
@@ -24,7 +24,7 @@ label {
 
 .validator {
     font-size: 95%;
-    color: red;
+    color: #ff0000;
     margin-left: 1em;
 }
 

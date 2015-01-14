@@ -15,21 +15,29 @@ public partial class Default : System.Web.UI.Page
 
     protected void btnCalculate_Click(object sender, EventArgs e)
     {
-        if (IsValid)
+        if (!IsValid)
         {
-            var monthlyInvestment = Convert.ToInt32(this.ddlMonthlyInvestment.SelectedValue);
-            var yearlyInterestRate = Convert.ToDecimal(this.txtInterestRate.Text);
-            var years = Convert.ToInt32(this.txtYears.Text);
-
-            var futureValue = this.CalculateFutureValue(monthlyInvestment,
-                yearlyInterestRate, years);
-
-            this.lblFutureValue.Text = futureValue.ToString("c");
+            return;
         }
+        var monthlyInvestment = Convert.ToInt32(this.ddlMonthlyInvestment.SelectedValue);
+        var yearlyInterestRate = Convert.ToDecimal(this.txtInterestRate.Text);
+        var years = Convert.ToInt32(this.txtYears.Text);
+
+        var futureValue = CalculateFutureValue(monthlyInvestment,
+            yearlyInterestRate, years);
+
+        this.lblFutureValue.Text = futureValue.ToString("c");
     }
 
-    protected decimal CalculateFutureValue(int monthlyInvestment,
-    decimal yearlyInterestRate, int years)
+    protected void btnClear_Click(object sender, EventArgs e)
+    {
+        this.ddlMonthlyInvestment.SelectedIndex = 0;
+        this.txtInterestRate.Text = "";
+        this.txtYears.Text = "";
+        this.lblFutureValue.Text = "";
+    }
+
+    private static decimal CalculateFutureValue(int monthlyInvestment, decimal yearlyInterestRate, int years)
     {
         var months = years * 12;
         var monthlyInterestRate = yearlyInterestRate / 12 / 100;
@@ -40,13 +48,5 @@ public partial class Default : System.Web.UI.Page
                 * (1 + monthlyInterestRate);
         }
         return futureValue;
-    }
-
-    protected void btnClear_Click(object sender, EventArgs e)
-    {
-        this.ddlMonthlyInvestment.SelectedIndex = 0;
-        this.txtInterestRate.Text = "";
-        this.txtYears.Text = "";
-        this.lblFutureValue.Text = "";
     }
 }
