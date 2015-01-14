@@ -21,3 +21,21 @@ label {
     margin-bottom: .5em;
     width: 10em;
 }
+
+.button {
+    margin-top: 1em;
+    width: 10em;
+}
+
+#ddlMonthlyInvestment {
+    width: 10.5em;
+}
+
+#lblFutureValue {
+    font-weight: bold;
+    margin-left: 1em;
+}
+
+#btnClear {
+    margin-left: 1em;
+}

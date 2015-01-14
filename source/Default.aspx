@@ -26,9 +26,9 @@
             <asp:Label ID="lblFutureValue" runat="server" Text=""></asp:Label>
             <br/>
             <asp:Button ID="btnCalculate" runat="server" Text="Calculate" 
-                onclick="btnCalculate_Click"/>
+                onclick="btnCalculate_Click" CssClass="button"/>
             <asp:Button ID="btnClear" runat="server" Text="Clear" 
-                onclick="btnClear_Click" CausesValidation="False" />
+                onclick="btnClear_Click" CausesValidation="False" CssClass="button" />
         </form>
     </section>    
 </body>
